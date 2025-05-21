@@ -1,0 +1,219 @@
+.detailContainer {
+  padding: 1.5rem;
+  width: 100%;
+  min-height: 350px;
+  color: var(--text-color);
+  border-radius: 16px;
+  position: relative;
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+  border: 1px solid var(--glass-border);
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+.detailPageWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+@media (max-width: 768px) {
+  .detailContainer {
+    padding: 30px 25px;
+    width: 95%;
+    margin: 20px auto;
+  }
+}
+
+.backButton {
+  position: absolute;
+  top: 20px;
+  left: 25px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  color: #e0e0e0;
+  font-size: 0.95em;
+  padding: 10px 16px;
+  border-radius: 50px;
+  background-color: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+  .backButton {
+    position: relative;
+    top: 0;
+    left: 0;
+    margin-bottom: 20px;
+    align-self: flex-start;
+  }
+}
+
+.backButton:hover {
+  background-color: var(--glass-hover);
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+  border-color: var(--button-border-hover);
+}
+
+[data-theme="light"] .backButton {
+  color: #333333;
+}
+
+[data-theme="light"] .backButton:hover {
+  color: #000000;
+}
+
+.quoteText {
+  font-size: 2em;
+  font-style: italic;
+  margin: 60px auto 30px auto;
+  line-height: 1.5;
+  color: var(--text-color);
+  text-align: center;
+  font-weight: 500;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  max-width: 90%;
+  letter-spacing: 0.01em;
+}
+
+.quoteAuthor {
+  font-size: 1.2em;
+  text-align: right;
+  color: var(--text-color);
+  opacity: 0.85;
+  margin-bottom: 25px;
+}
+
+.tagsContainer {
+  font-size: 0.9em;
+  color: var(--text-color);
+  opacity: 0.75;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.tagsContainer strong {
+  color: var(--text-color);
+  opacity: 0.9;
+}
+
+.relatedQuotesTitle {
+  font-size: 1.3em;
+  color: var(--text-color);
+  margin: 40px 0 15px 0;
+  font-weight: 500;
+}
+
+.favoriteButton {
+  position: absolute;
+  top: 25px;
+  right: 25px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background-color: var(--glass-bg);
+  color: var(--text-color);
+  padding: 8px 15px;
+  border: 1px solid var(--glass-border);
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.favoriteButton:hover {
+  background-color: var(--glass-hover);
+  border-color: var(--button-border-hover);
+}
+
+.favoriteButtonDetail {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  color: var(--text-color);
+  padding: 14px 24px;
+  border-radius: 50px;
+  cursor: pointer;
+  font-size: 1em;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  margin: 40px auto 20px auto;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  width: auto;
+  max-width: 250px;
+}
+
+.favoriteButtonDetail:hover {
+  background-color: var(--glass-hover);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  border-color: var(--button-border-hover);
+}
+
+.favoriteButtonDetail.favorited {
+  background: rgba(233, 30, 99, 0.2);
+  border-color: rgba(233, 30, 99, 0.4);
+}
+
+.favoriteButtonDetail:active {
+  transform: var(--glass-active-transform);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+.favoriteButtonDetail.favorited:hover {
+  background: rgba(233, 30, 99, 0.3);
+}
+
+.buttonText {
+  line-height: 1;
+}
+
+.message {
+  padding: 20px;
+  text-align: center;
+  font-size: 1.1em;
+  color: var(--text-color);
+}
+
+.errorContainer {
+  padding: 20px;
+  text-align: center;
+  font-size: 1.1em;
+  color: var(--text-color);
+}
+
+.errorContainer a {
+  color: var(--link-color);
+  text-decoration: underline;
+  font-weight: 500;
+}
+
+.errorContainer a:hover {
+  color: var(--link-hover-color);
+}
+
+.errorMsg {
+  color: var(--error-color);
+  text-align: center;
+  padding: 20px;
+  font-weight: 500;
+}

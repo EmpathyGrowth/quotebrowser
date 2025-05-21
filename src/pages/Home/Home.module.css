@@ -1,0 +1,65 @@
+.homeContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.controlsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 1.5rem;
+  align-items: flex-end;
+  justify-content: flex-start;
+}
+
+.controlsContainer > * {
+  flex-grow: 0;
+  flex-shrink: 1;
+}
+
+.listContainer {
+  padding: 1.5rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.resetButton {
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  color: var(--text-color);
+  cursor: pointer;
+  transition: all 0.25s ease;
+  border: 1px solid var(--glass-border);
+  background-color: var(--glass-bg);
+  border-radius: 8px;
+}
+
+.resetButton:hover {
+  border-color: var(--button-border-hover);
+  background-color: var(--glass-hover);
+}
+
+.resetButton:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(81, 88, 201, 0.3);
+}
+
+
+@media (max-width: 768px) {
+  .controlsContainer {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 1.5rem;
+    gap: 1rem;
+  }
+
+  .controlsContainer > * {
+    width: 100%;
+    
+  }
+
+  
+}

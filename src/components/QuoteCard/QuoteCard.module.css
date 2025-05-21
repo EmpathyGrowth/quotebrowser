@@ -1,0 +1,148 @@
+.quoteCard {
+  background: var(--glass-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 12px;
+  margin: 0;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  border: 1px solid var(--glass-border);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; 
+  transition: all 0.3s ease;
+  color: var(--text-color);
+  overflow: hidden;
+  position: relative;
+  min-height: 160px;
+}
+
+.quoteCard:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  border-color: var(--button-border-hover);
+}
+
+.quoteLink {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  padding: 20px 20px 60px 20px;
+  flex-grow: 1;
+  cursor: pointer;
+  position: relative;
+  z-index: 1;
+}
+
+.quoteLink:hover {
+  color: inherit;
+}
+
+.quoteText {
+  font-size: 1.1em;
+  font-style: italic;
+  margin-bottom: 10px;
+  font-weight: 500;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+}
+
+.quoteAuthor {
+  font-size: 0.95em;
+  text-align: right;
+  opacity: 1;
+  margin-bottom: 0;
+  margin-top: 10px;
+  font-weight: 500;
+}
+
+.buttonContainer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--glass-bg);
+  border-top: 1px solid var(--glass-border);
+  padding: 10px 10px;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 2;
+}
+
+@media (max-width: 480px) {
+  .buttonContainer {
+    padding: 8px 5px;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: center;
+  }
+  
+  .buttonContainer > * {
+    flex: 0 1 auto;
+    min-width: 40px;
+  }
+}
+
+.favoriteButton, .copyButton {
+  background: var(--glass-bg);
+  border: 1px solid transparent;
+  cursor: pointer;
+  color: var(--text-color);
+  padding: 6px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  position: relative;
+  margin: 0;
+  opacity: 0.9;
+  width: 40px;
+  height: 40px;
+}
+
+.favoriteButton:hover, .copyButton:hover {
+  background-color: var(--glass-hover);
+  transform: scale(1.1);
+  opacity: 1;
+  border-color: var(--button-border-hover);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.favoriteButton:active, .copyButton:active {
+  transform: var(--glass-active-transform);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.favoriteButton svg, .copyButton svg {
+  display: block;
+}
+
+.copyFeedback {
+  position: absolute;
+  top: -35px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(60, 60, 60, 0.9);
+  color: white;
+  padding: 6px 10px;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  white-space: nowrap;
+  animation: fadeIn 0.3s ease-in-out;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+
+@media (max-width: 619px) {
+  .quoteCard {
+    margin: 0;
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translate(-50%, 5px); }
+  to { opacity: 1; transform: translate(-50%, 0); }
+}

@@ -1,0 +1,135 @@
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+
+  --bg-gradient: linear-gradient(160deg, #1f1c2c 0%, #5c258d 50%, #3a3255 100%);
+  --text-color: rgba(255, 255, 255, 0.87);
+  --glass-bg: rgba(255, 255, 255, 0.1);
+  --glass-border: rgba(255, 255, 255, 0.3);
+  --glass-hover: rgba(255, 255, 255, 0.2);
+  --link-color: #646cff;
+  --link-hover-color: #535bf2;
+  --button-border-hover: #8c9eff;
+  --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+  --glass-active-transform: scale(0.97);
+  --error-color: #ff6b6b;
+}
+
+a {
+  font-weight: 500;
+  color: var(--link-color);
+  text-decoration: inherit;
+}
+a:hover {
+  color: var(--link-hover-color);
+}
+
+html {
+  overflow-y: scroll;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: flex-start;
+  min-width: 320px;
+  min-height: 100vh;
+  box-sizing: border-box;
+  background: var(--bg-gradient);
+  color: var(--text-color);
+}
+
+#root {
+  width: 100%;
+  flex-grow: 1;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: var(--glass-bg);
+  color: var(--text-color);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  border-color: var(--button-border-hover);
+  background-color: var(--glass-hover);
+  box-shadow: var(--glass-shadow);
+}
+
+button:active {
+  transform: var(--glass-active-transform);
+}
+
+button:focus,
+button:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--link-color);
+}
+
+
+[data-theme="light"] {
+  --bg-gradient: linear-gradient(160deg, #f0f8ff 0%, #d6e4f0 50%, #b0c4de 100%);
+  --text-color: #1a1a1a;
+  --glass-bg: rgba(0, 0, 0, 0.12);
+  --glass-border: rgba(0, 0, 0, 0.2);
+  --glass-hover: rgba(0, 0, 0, 0.18);
+  --link-color: #3a43a9;
+  --link-hover-color: #5158c9;
+  --button-border-hover: #5158c9;
+}
+
+[data-theme="light"] .quoteText {
+  color: #000;
+  font-weight: 500;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+}
+
+[data-theme="light"] .quoteAuthor {
+  color: #333;
+}
+
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme]) {
+    --bg-gradient: linear-gradient(160deg, #f0f8ff 0%, #d6e4f0 50%, #b0c4de 100%);
+    --text-color: #1a1a1a;
+    --glass-bg: rgba(0, 0, 0, 0.12);
+    --glass-border: rgba(0, 0, 0, 0.2);
+    --glass-hover: rgba(0, 0, 0, 0.18);
+    --link-color: #3a43a9;
+    --link-hover-color: #5158c9;
+    --button-border-hover: #5158c9;
+  }
+  
+  :root:not([data-theme]) .quoteText {
+    color: #000;
+    font-weight: 500;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+  }
+  
+  :root:not([data-theme]) .quoteAuthor {
+    color: #333;
+  }
+}

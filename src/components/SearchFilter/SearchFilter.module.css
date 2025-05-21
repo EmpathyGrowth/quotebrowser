@@ -1,0 +1,33 @@
+.search {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+    flex-grow: 1;
+    flex-basis: 150px;
+    min-width: 120px;
+    align-items: flex-start;
+}
+
+.search label {
+  display: block;
+  text-align: left;
+  color: var(--text-color);
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.search input {
+  border-color: var(--glass-border);
+}
+
+.search input {
+    width: 100%;
+    min-width: 0;
+}
+
+@media (max-width: 768px) {
+  .search {
+    flex-grow: 0;
+    flex-basis: auto;
+  }
+}
