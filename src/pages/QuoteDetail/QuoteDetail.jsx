@@ -10,14 +10,11 @@ export default function QuoteDetailPage() {
   const [quote, setQuote] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  // isFavorite will be derived from useFavorites hook
 
-  const { favoriteIds, toggleFavorite: toggleFavoriteFromHook } = useFavorites(); // favoritesCount removed
+  const { favoriteIds, toggleFavorite: toggleFavoriteFromHook } = useFavorites();
   const isFavorite = quote ? favoriteIds.includes(quote.id) : false;
 
-  // getFavoriteQuotesFromStorage removed, handled by useFavorites hook
 
-  // useEffect for updateFavoritesCount prop removed.
 
   useEffect(() => {
     const fetchQuoteDetail = async () => {
@@ -33,7 +30,6 @@ export default function QuoteDetailPage() {
         const data = await response.json();
         setQuote(data);
         setError(null);
-        // setIsFavorite call removed, isFavorite is now derived from hook's favoriteIds
       } catch (err) {
         setError(err.message);
         setQuote(null);
@@ -47,13 +43,9 @@ export default function QuoteDetailPage() {
 
   const handleToggleFavorite = useCallback(() => {
     if (!quote) return;
-    // Pass the full quote object to the hook, as it's needed for adding to favorites.
     toggleFavoriteFromHook(quote.id, quote);
   }, [quote, toggleFavoriteFromHook]);
   
-  // useEffect for handling external favorite changes is removed.
-  // The isFavorite status is now derived directly from favoriteIds from the useFavorites hook,
-  // which is inherently reactive to changes managed by the hook.
 
   if (loading) {
     return (

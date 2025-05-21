@@ -28,9 +28,6 @@ export default function HomePage() {
     const fetchQuotes = async () => {
       try {
         const res = await fetch("https://dummyjson.com/quotes?limit=150&skip=0");
-        if (!res.ok) {
-          throw new Error(`HTTP error! status: ${res.status}`);
-        }
         const data = await res.json();
         setQuotes(data.quotes || []);
         const uniqueAuthors = [...new Set((data.quotes || []).map((q) => q.author))];
@@ -94,12 +91,12 @@ export default function HomePage() {
 
   const { favoriteIds, toggleFavorite: toggleFavoriteFromHook } = useFavorites();
 
-  const handleToggleFavorite = useCallback((quoteIdToToggle) => {
-    const quoteObject = quotes.find(q => q.id === quoteIdToToggle);
-    if (quoteObject || favoriteIds.includes(quoteIdToToggle)) {
-      toggleFavoriteFromHook(quoteIdToToggle, quoteObject);
+  const handleToggleFavorite = useCallback((quoteId) => {
+    const quote = quotes.find(q => q.id === quoteId);
+    if (quote || favoriteIds.includes(quoteId)) {
+      toggleFavoriteFromHook(quoteId, quote);
     } else {
-      console.error("HomePage: Quote object not found for ID during toggleFavorite:", quoteIdToToggle);
+      console.error("Quote object not found for ID during toggleFavorite:", quoteId);
     }
   }, [quotes, toggleFavoriteFromHook, favoriteIds]);
 
